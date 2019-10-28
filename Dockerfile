@@ -1,4 +1,5 @@
 FROM amazonlinux:2
+COPY .amazon-linux-bi-build /
 COPY amzn2-ec2-packages.txt dacut-extras.txt dacut-python-extras.txt /tmp/
 RUN yum update -y && \
     yum install -y $(cat /tmp/amzn2-ec2-packages.txt) && \
